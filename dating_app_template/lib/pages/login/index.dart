@@ -12,7 +12,7 @@ class Login extends StatelessWidget {
               gradient: LinearGradient(
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
-                  colors: [Colors.blue[800], Colors.pink[300]]
+                  colors: [Colors.orange[200], Colors.pink[400]]
               ),
           ),
           child: Center(
@@ -20,10 +20,13 @@ class Login extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
+                Spacer(),
+                Image.asset('./assets/logo.png', width: 250,),
+                Spacer(),
                 CustomInput(
                   hintText: 'Username',
                   hintColor: Colors.white,
-                  backgroundColor: Colors.pink[200],
+                  backgroundColor: Colors.deepOrange[200],
                   width: MediaQuery.of(context).size.width / 1.25,
                   height: MediaQuery.of(context).size.height / 12,
                   icon:  Icon(Icons.account_box, color: Colors.white),
@@ -32,10 +35,11 @@ class Login extends StatelessWidget {
                 CustomInput(
                   hintText: 'Password',
                   hintColor: Colors.white,
-                  backgroundColor: Colors.pink[200],
+                  backgroundColor: Colors.deepOrange[200],
                   width: MediaQuery.of(context).size.width / 1.25,
                   height: MediaQuery.of(context).size.height / 12,
                   icon:  Icon(Icons.lock_open, color: Colors.white),
+                  isSecret: true,
                 ),
                 Padding(padding: EdgeInsets.all(10),),
                 CustomButton(
@@ -44,6 +48,38 @@ class Login extends StatelessWidget {
                   width: MediaQuery.of(context).size.width / 1.25,
                   height: MediaQuery.of(context).size.height / 14,
                 ),
+                Padding(padding: EdgeInsets.all(10),),
+                RichText(
+                  text: TextSpan(
+                      text: 'Don\'t have an account ?',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 12,
+                      ),
+                      children: <TextSpan>[
+                        TextSpan(text: ' Sign Up Now',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.deepOrange[100],
+                              fontSize: 12
+                          ),
+                        ),
+                      ]
+                  ),
+                ),
+                Spacer(),
+                RichText(
+                  text: TextSpan(
+                      text: 'Forgot password ?',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 15,
+                      ),
+                  ),
+                ),
+                Padding(padding: EdgeInsets.all(10),),
               ],
             ),
           )
