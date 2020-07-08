@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+const double SIZE_RATIO = 1.2;
+const double BUTTON_OFFSET = 37;
+
 class Swiper extends StatefulWidget {
   @override
   _SwiperState createState() => _SwiperState();
@@ -10,11 +13,11 @@ class _SwiperState extends State<Swiper> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: <Widget>[
           Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height / 1.3,
+            height: MediaQuery.of(context).size.height / SIZE_RATIO,
             decoration: BoxDecoration(
               color: Colors.redAccent,
               borderRadius: BorderRadius.only(
@@ -29,7 +32,7 @@ class _SwiperState extends State<Swiper> {
             child: Align(
               alignment: Alignment.bottomLeft,
               child: Padding(
-                padding: EdgeInsets.only(bottom: 40, left: 20),
+                padding: EdgeInsets.only(bottom: 70, left: 20),
                 child: RichText(
                   text: TextSpan(
                     text: 'Loufi, 20',
@@ -53,13 +56,16 @@ class _SwiperState extends State<Swiper> {
             ),
           ),
           Padding(padding: EdgeInsets.all(10),),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Container(
-                width: 75,
-                height: 75,
-                decoration: BoxDecoration(
+          Container(
+            alignment: Alignment.bottomCenter,
+            padding: EdgeInsets.only(bottom: (MediaQuery.of(context).size.height - (MediaQuery.of(context).size.height / SIZE_RATIO)) - BUTTON_OFFSET),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Container(
+                  width: 75,
+                  height: 75,
+                  decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(50),
                     boxShadow: [
@@ -70,51 +76,52 @@ class _SwiperState extends State<Swiper> {
                         offset: Offset(0, 3), // changes position of shadow
                       ),
                     ],
+                  ),
+                  child: Center(
+                    child: Icon(Icons.clear, color: Colors.redAccent,),
+                  ),
                 ),
-                child: Center(
-                  child: Icon(Icons.clear, color: Colors.redAccent,),
+                Container(
+                  width: 75,
+                  height: 75,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(50),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey[200].withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 7,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Icon(Icons.star, color: Colors.blueAccent,),
+                  ),
                 ),
-              ),
-              Container(
-                width: 75,
-                height: 75,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(50),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey[200].withOpacity(0.5),
-                      spreadRadius: 1,
-                      blurRadius: 7,
-                      offset: Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
+                Container(
+                  width: 75,
+                  height: 75,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(50),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey[200].withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 7,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Icon(Icons.favorite, color: Colors.greenAccent,),
+                  ),
                 ),
-                child: Center(
-                  child: Icon(Icons.star, color: Colors.blueAccent,),
-                ),
-              ),
-              Container(
-                width: 75,
-                height: 75,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(50),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey[200].withOpacity(0.5),
-                      spreadRadius: 1,
-                      blurRadius: 7,
-                      offset: Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
-                ),
-                child: Center(
-                  child: Icon(Icons.favorite, color: Colors.greenAccent,),
-                ),
-              ),
-            ],
-          ),
+              ],
+            ),
+          )
         ],
       )
     );
