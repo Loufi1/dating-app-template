@@ -1,7 +1,16 @@
+import 'package:dating_app_template/pages/core/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import './pages/login/index.dart';
 
-void main() => runApp(MyApp());
+void main() => runMyApp();
+
+runMyApp () {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((_) {
+    runApp(MyApp());
+  });
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -15,6 +24,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => Login(),
+        '/core': (context) => Core(),
       },
     );
   }

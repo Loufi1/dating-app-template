@@ -47,6 +47,7 @@ class Login extends StatelessWidget {
                   buttonNameColor: Colors.pink[300],
                   width: MediaQuery.of(context).size.width / 1.25,
                   height: MediaQuery.of(context).size.height / 14,
+                  onTap: () => Navigator.pushNamed(context, '/core'),
                 ),
                 Padding(padding: EdgeInsets.all(10),),
                 RichText(
