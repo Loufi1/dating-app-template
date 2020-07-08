@@ -1,3 +1,6 @@
+import 'package:dating_app_template/pages/account/index.dart';
+import 'package:dating_app_template/pages/chat/index.dart';
+import 'package:dating_app_template/pages/swiper/index.dart';
 import 'package:flutter/material.dart';
 
 class Core extends StatefulWidget {
@@ -25,9 +28,9 @@ class _CoreState extends State<Core> {
             physics: NeverScrollableScrollPhysics(),
             controller: pageController,
             children: <Widget>[
-              Text('page 1'),
-              Text('page 2'),
-              Text('page 3'),
+              Account(),
+              Swiper(),
+              Chat(),
             ],
           ),
           Align(
