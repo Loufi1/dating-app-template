@@ -40,7 +40,7 @@ class _CoreState extends State<Core> {
               children: <Widget>[
                 IconButton(
                   icon: Icon(Icons.account_box),
-                  color: selectedPage == 0 ? Colors.pink[400] : Colors.grey,
+                  color: selectedPage == 0 ? Colors.deepOrange : Colors.grey,
                   onPressed: () {
                     pageController.jumpToPage(0);
                     setState(() {
@@ -50,7 +50,7 @@ class _CoreState extends State<Core> {
                 ),
                 IconButton(
                   icon: Icon(Icons.favorite),
-                  color: selectedPage == 1 ? Colors.pink[400] : Colors.grey,
+                  color: selectedPage == 1 ? Colors.deepOrange : Colors.grey,
                   onPressed: () {
                     pageController.jumpToPage(1);
                     setState(() {
@@ -62,7 +62,7 @@ class _CoreState extends State<Core> {
                   icon: Icon(
                     Icons.message,
                   ),
-                  color: selectedPage == 2 ? Colors.pink[400] : Colors.grey,
+                  color: selectedPage == 2 ? Colors.deepOrange : Colors.grey,
                   onPressed: () {
                     pageController.jumpToPage(2);
                     setState(() {
