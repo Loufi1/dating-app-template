@@ -1,4 +1,5 @@
 import 'package:dating_app_template/pages/swiper/profileCard.dart';
+import 'package:dating_app_template/widgets/customRoundedButton.dart';
 import 'package:flutter/material.dart';
 
 const double SIZE_RATIO = 1.2;
@@ -57,72 +58,18 @@ class _SwiperState extends State<Swiper> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                GestureDetector(
+                CustomRoundedButton(
                   onTap: () => this.nextProfile(),
-                  child: Container(
-                    width: 75,
-                    height: 75,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(50),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey[200].withOpacity(0.5),
-                          spreadRadius: 1,
-                          blurRadius: 7,
-                          offset: Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    child: Center(
-                      child: Icon(Icons.clear, color: Colors.redAccent,),
-                    ),
-                  ),
+                  icon: Icon(Icons.clear, color: Colors.redAccent,),
                 ),
-                GestureDetector(
+                CustomRoundedButton(
                   onTap: () => this.nextProfile(),
-                  child: Container(
-                    width: 75,
-                    height: 75,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(50),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey[200].withOpacity(0.5),
-                          spreadRadius: 1,
-                          blurRadius: 7,
-                          offset: Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    child: Center(
-                      child: Icon(Icons.star, color: Colors.blueAccent,),
-                    ),
-                  ),
+                  icon: Icon(Icons.star, color: Colors.blueAccent,),
                 ),
-                GestureDetector(
+                CustomRoundedButton(
                   onTap: () => this.nextProfile(),
-                  child: Container(
-                    width: 75,
-                    height: 75,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(50),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey[200].withOpacity(0.5),
-                          spreadRadius: 1,
-                          blurRadius: 7,
-                          offset: Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    child: Center(
-                      child: Icon(Icons.favorite, color: Colors.greenAccent,),
-                    ),
-                  ),
-                )
+                  icon: Icon(Icons.favorite, color: Colors.greenAccent,),
+                ),
               ],
             ),
           )
