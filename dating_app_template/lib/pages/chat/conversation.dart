@@ -1,3 +1,4 @@
+import 'package:dating_app_template/widgets/avatar.dart';
 import 'package:dating_app_template/widgets/notificationBadge.dart';
 import 'package:flutter/material.dart';
 
@@ -19,18 +20,7 @@ class Conversation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        Container(
-          width: 60,
-          height: 60,
-          decoration: BoxDecoration(
-            color: Colors.transparent,
-            borderRadius: BorderRadius.circular(50),
-            image: DecorationImage(
-              image: AssetImage(this.picture),
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
+        Avatar(picture: this.picture),
         Padding(padding: EdgeInsets.only(left: 15),),
         RichText(
           text: TextSpan(
@@ -52,7 +42,7 @@ class Conversation extends StatelessWidget {
         ),
         Spacer(),
         if (this.newMessage) Padding(
-          padding: EdgeInsets.only(right: 60, bottom: 5),
+          padding: EdgeInsets.only(right: 20, bottom: 5),
           child: NotificationBadge(),
         ),
       ],

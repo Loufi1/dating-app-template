@@ -26,8 +26,8 @@ class Swiper extends StatefulWidget {
 
 class _SwiperState extends State<Swiper> {
   var cards = [
-    Cards('Loufi', '20', 'Croque la vie à pleine dents', 'assets/profile_pic.jpg'),
     Cards('Jeanne', '18', 'L\'ame n\'est que le reflet de l\'étoile', 'assets/jeanne.jpg'),
+    Cards('Loufi', '20', 'Croque la vie à pleine dents', 'assets/profile_pic.jpg'),
     Cards('Paul', '19', 'Cherche copine', 'assets/paul.jpg'),
     Cards('Barbara', '28', 'Le soleil ne brule qu\'une seul fois', 'assets/barbara.jpg'),
     Cards('Emma', '24', 'Coucou :)', 'assets/emma.png'),

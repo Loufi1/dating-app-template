@@ -12,8 +12,8 @@ class NotificationBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: 15,
-        height: 15,
+        width: 20,
+        height: 20,
         decoration: BoxDecoration(
           color: Colors.deepOrange,
           borderRadius: BorderRadius.circular(50),

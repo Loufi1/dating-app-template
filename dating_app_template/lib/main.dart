@@ -1,3 +1,4 @@
+import 'package:dating_app_template/pages/chat/discussion/index.dart';
 import 'package:dating_app_template/pages/core/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,13 +19,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Dating app',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       initialRoute: '/',
       routes: {
         '/': (context) => Login(),
         '/core': (context) => Core(),
+        '/discussion': (context) => Discussion(),
       },
     );
   }

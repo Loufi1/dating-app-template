@@ -12,6 +12,10 @@ class CustomInput extends StatefulWidget {
   final double width;
   final double height;
   final Icon icon;
+  final double radius;
+  final Color borderColor;
+  final Color cursorColor;
+  final bool alignCenter;
 
   CustomInput({
     this.controller,
@@ -20,8 +24,12 @@ class CustomInput extends StatefulWidget {
     this.inputColor = Colors.white,
     this.backgroundColor = Colors.blueGrey,
     this.hintColor =  Colors.white,
+    this.borderColor = Colors.white,
+    this.cursorColor = Colors.pink,
     this.hintText = 'default@area.com',
     this.icon = const Icon(Icons.account_circle, color: Colors.white),
+    this.alignCenter = true,
+    this.radius = 50,
     this.height,
     this.width,
   });
@@ -40,18 +48,18 @@ class _CustomInputState extends State<CustomInput> {
       height: widget.height,
       decoration: BoxDecoration(
         color: widget.backgroundColor,
-        borderRadius: BorderRadius.circular(50),
-        border: Border.all(width: 2.0, color: Colors.white),
+        borderRadius: BorderRadius.circular(widget.radius),
+        border: Border.all(width: 2.0, color: widget.borderColor),
       ),
       child: Center(
         child: TextField(
-          textAlign: TextAlign.center,
+          textAlign: widget.alignCenter ? TextAlign.center : TextAlign.start,
           controller: widget.controller,
-          cursorColor: Colors.pink[600],
+          cursorColor: widget.cursorColor,
           obscureText: widget.isSecret ? true : false,
           decoration: InputDecoration(
             prefixIcon: widget.icon,
-            suffixIcon: Icon(Icons.done, color: Colors.transparent,), // Fix from the future to prevent prefixIcon from shifting the input
+            suffixIcon: Icon(Icons.done, color: Colors.transparent,),
             border: InputBorder.none,
             hintText: widget.hintText,
             hintStyle: TextStyle(color: widget.hintColor),
